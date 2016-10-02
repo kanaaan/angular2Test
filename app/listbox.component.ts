@@ -9,5 +9,5 @@ import { Component } from '@angular/core';
 
 
 export class ListboxComponent {
-    Author: string ='Kanaan Abdo'
+    
  }
