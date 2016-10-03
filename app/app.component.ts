@@ -13,6 +13,6 @@ import { Component,Input } from '@angular/core';
 
 
 export class AppComponent {
-    Author: string ='the Author';
+    Author: string ='The Author';
 
  }
