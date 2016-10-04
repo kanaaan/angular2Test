@@ -5,14 +5,14 @@ import { Component } from '@angular/core';
     template: `
     <h1>
         <p>Listbox</p>
-        <button  (click)="AddClicked($event)">Add</button>
-        <button  (click)="RemoveClicked($event)">Remove</button>
+        <button class="btn btn-secondary" (click)="AddClicked($event)">Add</button>
+        <button class="btn btn-secondary" (click)="RemoveClicked($event)">Remove</button>
     
-        <ul>
-        <li *ngFor="let item of data">
-            {{ item }}
-        </li>
-        </ul>
+        <div ul class="list-group">
+            <li *ngFor="let item of data">
+                {{ item }}
+            </li>
+        </div>
     </h1>
     `
 })
