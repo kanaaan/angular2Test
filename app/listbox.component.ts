@@ -30,7 +30,7 @@ export class ListboxComponent {
     }
     public RemoveClicked(event)
     {
-        console.log('RemoveClicked')
+        console.log('RemoveClicked');
         this.data.splice(this.data.length-1);
     }
  }

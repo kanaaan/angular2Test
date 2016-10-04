@@ -12,3 +12,30 @@ h2, h3,p {
 body,input {
   margin: 2em;
 }
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddd2d;
+    text-align: left;
+    padding: 8px;
+    margin: 2em;
+}
+
+tr:nth-child(even) {
+    background-color: #d43ddd;
+}
+
+.button {
+    background-color: #4CAF53; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
