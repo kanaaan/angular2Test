@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
     <div>
         <th>Firstname</th>
         <th>Lastname</th> 
-        <th>Phone</th>
     </div>
     `
 })

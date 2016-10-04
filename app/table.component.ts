@@ -5,6 +5,10 @@ import { TableItemComponent } from './tableitem.component';
     selector: 'table-ctrl',
     template: '\
     <h1>TableComponent</h1>\
+    <input type="text" class="form-control" placeholder="Firstname">\
+    <h1></h1>\
+    <input type="text" class="form-control" placeholder="Lastname">\
+    <h1></h1>\
     <button class="btn btn-success" (click)="AddClicked($event)">Add</button>\
     <button  class="btn btn-warning" (click)="RemoveClicked($event)">Remove</button>\
     <h1></h1>\
