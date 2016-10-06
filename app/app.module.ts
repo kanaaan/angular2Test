@@ -13,6 +13,6 @@ import { TableItemComponent } from './tableitem.component';
 
 export class AppModule {
     constructor() {
-        console.log('AppModule constructor');
+        //console.log('AppModule constructor');
     }
 }

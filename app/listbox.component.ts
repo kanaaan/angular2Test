@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {enableProdMode} from '@angular/core';
+enableProdMode();
 
 @Component({
     selector: 'Listbox-app',
@@ -21,7 +23,7 @@ import { Component } from '@angular/core';
 export class ListboxComponent {
     data = ['1', '2', '3', '4'];
     constructor() {
-        console.log('ListboxComponent constructor');
+        //console.log('ListboxComponent constructor');
     }
     public AddClicked(event)
     {

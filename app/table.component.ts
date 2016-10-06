@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
 import { TableItemComponent } from './tableitem.component';
-
-class Person {
-  Firstname: string ;
-  Lastname: string ;
-}
+import { PersonsService, Person } from './persons.service';
 
 @Component({
     selector: 'table-ctrl',
@@ -19,34 +15,40 @@ class Person {
     <h1></h1>\
     <table class="table table-inverse">\
         <div *ngFor="let line of data">\
-         <tableitem-ctrl></tableitem-ctrl>\
+            <tableitem-ctrl></tableitem-ctrl>\
         </div>\
     </table>\
     '
     //,directives: [TableItemComponent]
+    ,providers :[PersonsService]
 })
-
 
 
 export class TableComponent {
     
-    data: Person[] = [{Firstname: 'a', Lastname: 'b'}];
-    
+    data: Person[];
     person: Person;
+    dataService:PersonsService;
     
-    constructor() {
-        console.log('TableComponent constructor');
+    constructor(private personsService:PersonsService) {
+        //console.log('TableComponent constructor');
         this.person=new Person();
+        this.dataService=personsService;
+        this.data=this.personsService.getPersons();
     }
     public AddClicked(event)
     {
-        console.log('AddClicked '+this.person.Firstname+' '+this.person.Lastname);
-        this.data.push(this.person);
+        //console.log('AddClicked '+this.person.Firstname+' '+this.person.Lastname);
+        var a: Person;
+        a=new Person();
+        a.Firstname=this.person.Firstname;
+        a.Lastname=this.person.Lastname;
+        this.dataService.pushPerson(a);
     }
     public RemoveClicked(event)
     {
         console.log('RemoveClicked');
-        this.data.splice(this.data.length-1);
+        this.dataService.removeLast();
     } 
 
     AddLastname(a: string) {

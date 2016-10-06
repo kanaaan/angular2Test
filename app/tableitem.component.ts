@@ -1,21 +1,26 @@
 import { Component } from '@angular/core';
+import {PersonsService, Person} from './persons.service';
 
 @Component({
     selector: 'tableitem-ctrl',
     template: `
     <div>
-        <th>{{Firstname}}</th>
-        <th>{{Lastname}}</th> 
+        <th>{{this.person.Firstname}}</th>
+        <th>{{this.person.Lastname}}</th> 
     </div>
     `
+    ,providers :[PersonsService]
 })
 
 
 export class TableItemComponent {
-    Firstname: string ='Firstname';
-    Lastname: string ='Lastname';
+    dataService:PersonsService;
+    person:Person;
 
-    constructor() {
-        console.log('TableItemComponent constructor');
-    }    
+    constructor(private personsService:PersonsService) {
+        this.dataService=personsService;
+        this.person=this.dataService.getLast();
+        //console.log('-- TableItemComponent constructor:'+this.person.Firstname+','+this.person.Lastname);
+        
+    } 
  }
